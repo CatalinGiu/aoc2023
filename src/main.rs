@@ -45,17 +45,17 @@ fn main() {
             );
         }
         "day3" => {
-            let lines = read_lines(&input_file).expect("Could not read file");
+            let mut lines = read_lines(&input_file).expect("Could not read file");
             println!(
                 "part1: {}",
                 day3::aoc_03_part1(lines).expect("Error processing the input")
             );
 
-            // lines = read_lines(&input_file).expect("Could not read file");
-            // println!(
-            //     "part2: {}",
-            //     day2::aoc_02_part2(lines).expect("Error processing the input")
-            // );
+            lines = read_lines(&input_file).expect("Could not read file");
+            println!(
+                "part2: {}",
+                day3::aoc_03_part2(lines).expect("Error processing the input")
+            );
         }
         &_ => exit(1),
     }
