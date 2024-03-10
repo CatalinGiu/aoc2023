@@ -4,6 +4,7 @@ use std::{
     io::{self, BufRead},
     path::Path,
     process::exit,
+    time::Instant,
 };
 
 mod day1;
@@ -52,10 +53,22 @@ fn main() {
             );
 
             lines = read_lines(&input_file).expect("Could not read file");
+            let mut start_time = Instant::now();
             println!(
                 "part2: {}",
                 day3::aoc_03_part2(lines).expect("Error processing the input")
             );
+            let mut end_time = Instant::now();
+            println!("(time: {:?}))", end_time - start_time);
+
+            lines = read_lines(&input_file).expect("Could not read file");
+            start_time = Instant::now();
+            println!(
+                "part2 data structures: {}",
+                day3::aoc_03_part2_structs(lines).expect("Error processing the input")
+            );
+            end_time = Instant::now();
+            println!("(time: {:?}))", end_time - start_time);
         }
         &_ => exit(1),
     }
