@@ -10,6 +10,7 @@ use std::{
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 const INPUT_DIR: &str = "inputs/";
 
 fn main() {
@@ -69,6 +70,19 @@ fn main() {
             );
             end_time = Instant::now();
             println!("(time: {:?}))", end_time - start_time);
+        }
+        "day4" => {
+            let mut lines = read_lines(&input_file).expect("Could not read file");
+            println!(
+                "part1: {}",
+                day4::aoc_04_part1(lines).expect("Error processing the input")
+            );
+
+            lines = read_lines(&input_file).expect("Could not read file");
+            println!(
+                "part2: {}",
+                day4::aoc_04_part2(lines).expect("Error processing the input")
+            );
         }
         &_ => exit(1),
     }
