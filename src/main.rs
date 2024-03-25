@@ -11,6 +11,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 const INPUT_DIR: &str = "inputs/";
 
 fn main() {
@@ -83,6 +84,25 @@ fn main() {
                 "part2: {}",
                 day4::aoc_04_part2(lines).expect("Error processing the input")
             );
+        }
+        "day5" => {
+            let mut lines = read_lines(&input_file).expect("Could not read file");
+            let start_time = Instant::now();
+            println!(
+                "part1: {}",
+                day5::aoc_05_part1(lines).expect("Error processing the input")
+            );
+            let end_time = Instant::now();
+            println!("(time: {:?}))", end_time - start_time);
+
+            lines = read_lines(&input_file).expect("Could not read file");
+            let start_time = Instant::now();
+            println!(
+                "part2: {}",
+                day5::aoc_05_part2(lines).expect("Error processing the input")
+            );
+            let end_time = Instant::now();
+            println!("(time: {:?}))", end_time - start_time);
         }
         &_ => exit(1),
     }
